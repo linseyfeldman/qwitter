@@ -1,17 +1,17 @@
 <template>
   <q-layout view="lHr lpR fFf">
 
-    <q-header bordered class="bg-white text-black">
+    <q-header bordered class="bg-pink-1 text-pink-10">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="left = !left" />
+        <q-btn dense flat round icon="menu" @click="left = !left" color="pink-7" />
 
-        <q-toolbar-title class="text-weight-bold">
+        <q-toolbar-title class="text-weight-bold text-pink-8">
           <span class="gt-sm">{{ $route.name }}</span>
           <q-icon
             class="header-icon q-pa-md lt-md"
             name="fas fa-dove"
             size="sm"
-            color="primary"
+            color="pink-6"
           />
         </q-toolbar-title>
 
@@ -23,13 +23,13 @@
       side="left"
       :width="283"
       bordered
-      show-if-above
+      class="bg-pink-1"
     >
       <q-icon
         class="q-pa-md"
         name="fas fa-dove"
         size="lg"
-        color="primary"
+        color="pink-6"
       />
 
       <q-list>
@@ -38,39 +38,42 @@
           v-ripple
           clickable
           exact
+          active-class="text-pink-8"
         >
           <q-item-section avatar>
-            <q-icon name="home" size="md" />
+            <q-icon name="home" size="md" color="pink-6" />
           </q-item-section>
 
-          <q-item-section class="text-h6 text-weight-bold">Home</q-item-section>
+          <q-item-section class="text-h6 text-weight-bold text-pink-9">Home</q-item-section>
         </q-item>
         <q-item
           to="/about"
           v-ripple
           clickable
           exact
+          active-class="text-pink-8"
         >
           <q-item-section avatar>
-            <q-icon name="help" size="md" />
+            <q-icon name="help" size="md" color="pink-6" />
           </q-item-section>
 
-          <q-item-section class="text-h6 text-weight-bold">About</q-item-section>
+          <q-item-section class="text-h6 text-weight-bold text-pink-9">About</q-item-section>
         </q-item>
       </q-list>
 
     </q-drawer>
 
-    <q-drawer show-if-above v-model="right" side="right" bordered>
+    <q-drawer show-if-above v-model="right" side="right" bordered class="bg-pink-1">
       <q-input
         placeholder="Search Qwitter"
         class="q-ma-md"
         outlined
         rounded
         dense
+        color="pink-6"
       >
         <template v-slot:prepend>
-          <q-icon name="search" />
+          <q-icon name="search" color="pink-5" />
         </template>
       </q-input>
 
@@ -80,35 +83,35 @@
       >
         <q-item class="q-pa-md">
           <q-item-section>
-            <q-item-label overline class="text-grey">Education</q-item-label>
-            <q-item-label class="text-weight-bold">Something amazing happened!</q-item-label>
-            <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+            <q-item-label overline class="text-pink-4">Education</q-item-label>
+            <q-item-label class="text-weight-bold text-pink-9">Something amazing happened!</q-item-label>
+            <q-item-label caption class="text-pink-7">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
           </q-item-section>
 
           <q-item-section side top>
-            <q-item-label caption>5 min ago</q-item-label>
+            <q-item-label caption class="text-pink-5">5 min ago</q-item-label>
           </q-item-section>
         </q-item>
         <q-item class="q-pa-md">
           <q-item-section>
-            <q-item-label overline class="text-grey">Education</q-item-label>
-            <q-item-label class="text-weight-bold">Something amazing happened!</q-item-label>
-            <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+            <q-item-label overline class="text-pink-4">Education</q-item-label>
+            <q-item-label class="text-weight-bold text-pink-9">Something amazing happened!</q-item-label>
+            <q-item-label caption class="text-pink-7">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
           </q-item-section>
 
           <q-item-section side top>
-            <q-item-label caption>5 min ago</q-item-label>
+            <q-item-label caption class="text-pink-5">5 min ago</q-item-label>
           </q-item-section>
         </q-item>
         <q-item class="q-pa-md">
           <q-item-section>
-            <q-item-label overline class="text-grey">Education</q-item-label>
-            <q-item-label class="text-weight-bold">Something amazing happened!</q-item-label>
-            <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+            <q-item-label overline class="text-pink-4">Education</q-item-label>
+            <q-item-label class="text-weight-bold text-pink-9">Something amazing happened!</q-item-label>
+            <q-item-label caption class="text-pink-7">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
           </q-item-section>
 
           <q-item-section side top>
-            <q-item-label caption>5 min ago</q-item-label>
+            <q-item-label caption class="text-pink-5">5 min ago</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
