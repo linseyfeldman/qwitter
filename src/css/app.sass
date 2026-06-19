@@ -1,1 +1,190 @@
-// app global css in Sass form
+// Global design tokens & base styles
+// Fixes: Aesthetic-Usability Effect, Law of Proximity (consistent spacing)
+
+// ── Typography ──────────────────────────────────────────────────────────────
+body
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
+  font-size: 15px
+  line-height: 1.5
+  color: #14171A
+  background-color: #F5F8FA
+
+// ── Layout tokens ───────────────────────────────────────────────────────────
+$sidebar-width: 275px
+$feed-max-width: 600px
+$right-rail-width: 350px
+
+// ── Scrollbar ───────────────────────────────────────────────────────────────
+::-webkit-scrollbar
+  width: 4px
+::-webkit-scrollbar-track
+  background: transparent
+::-webkit-scrollbar-thumb
+  background: #AAB8C2
+  border-radius: 2px
+
+// ── Tweet card ──────────────────────────────────────────────────────────────
+// Law of Proximity: tweet content visually grouped, actions separated
+.tweet-card
+  border-bottom: 1px solid #E1E8ED !important
+  border-left: none !important
+  border-right: none !important
+  border-top: none !important
+  border-radius: 0 !important
+  transition: background-color 0.15s ease
+  cursor: pointer
+
+  &:hover
+    background-color: rgba(0, 0, 0, 0.03)
+
+.tweet-content
+  font-size: 15px
+  line-height: 1.5
+  word-break: break-word
+  white-space: pre-wrap
+  margin-top: 4px
+
+// ── Tweet actions ───────────────────────────────────────────────────────────
+// Fitts's Law: min 44×44px touch targets on mobile
+.tweet-actions
+  padding: 4px 0 8px 0
+
+  .q-btn
+    min-width: 44px
+    min-height: 44px
+    color: #657786
+
+    &:hover
+      color: #1DA1F2
+
+    &.liked
+      color: #E0245E
+
+    &.retweeted
+      color: #17BF63
+
+// ── Compose box ─────────────────────────────────────────────────────────────
+.compose-box
+  border-bottom: 8px solid #F5F8FA
+
+.char-counter
+  font-size: 13px
+  color: #657786
+
+  &.warning
+    color: #FFAD1F
+
+  &.danger
+    color: #E0245E
+
+// ── Skeleton loader ──────────────────────────────────────────────────────────
+// Doherty Threshold: show progress immediately, never leave user waiting silently
+.skeleton-avatar
+  width: 48px
+  height: 48px
+  border-radius: 50%
+  background: linear-gradient(90deg, #E1E8ED 25%, #F5F8FA 50%, #E1E8ED 75%)
+  background-size: 200% 100%
+  animation: shimmer 1.4s infinite
+
+.skeleton-line
+  height: 14px
+  border-radius: 7px
+  background: linear-gradient(90deg, #E1E8ED 25%, #F5F8FA 50%, #E1E8ED 75%)
+  background-size: 200% 100%
+  animation: shimmer 1.4s infinite
+
+  &.short
+    width: 40%
+
+  &.medium
+    width: 65%
+
+  &.full
+    width: 100%
+
+@keyframes shimmer
+  0%
+    background-position: 200% 0
+  100%
+    background-position: -200% 0
+
+// ── Empty state ──────────────────────────────────────────────────────────────
+// Peak-End Rule: a positive, memorable empty state
+.empty-state
+  padding: 48px 24px
+  text-align: center
+
+  .empty-state__icon
+    font-size: 64px
+    color: #AAB8C2
+    margin-bottom: 16px
+
+  .empty-state__title
+    font-size: 23px
+    font-weight: 800
+    color: #14171A
+    margin-bottom: 8px
+
+  .empty-state__subtitle
+    font-size: 15px
+    color: #657786
+    max-width: 320px
+    margin: 0 auto 24px
+
+// ── Auth layout ──────────────────────────────────────────────────────────────
+.auth-layout
+  min-height: 100vh
+  background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%)
+
+.auth-card
+  width: 100%
+  max-width: 400px
+  border-radius: 16px !important
+
+.auth-logo
+  font-size: 40px
+  color: #1DA1F2
+  margin-bottom: 8px
+
+// ── Sidebar nav ──────────────────────────────────────────────────────────────
+.sidebar-nav
+  position: sticky
+  top: 0
+  height: 100vh
+  overflow-y: auto
+  padding: 8px 0
+
+.sidebar-nav-item
+  border-radius: 9999px !important
+  padding: 12px 16px !important
+  font-size: 19px
+  font-weight: 400
+  transition: background-color 0.15s ease
+
+  &:hover
+    background-color: rgba(29, 161, 242, 0.1)
+
+  &.active
+    font-weight: 700
+
+// ── Loading overlay ──────────────────────────────────────────────────────────
+.loading-overlay
+  position: fixed
+  inset: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  background: #ffffff
+  z-index: 9999
+
+// ── Error banner ─────────────────────────────────────────────────────────────
+.error-banner
+  border-left: 4px solid #E0245E
+  border-radius: 4px
+
+// ── Responsive helpers ───────────────────────────────────────────────────────
+@media (max-width: 599px)
+  .tweet-actions .q-btn
+    min-width: 48px
+    min-height: 48px
